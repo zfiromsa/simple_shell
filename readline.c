@@ -1,10 +1,9 @@
 #include "shell.h"
 
-void _readline(char* cmd)
+void readline(char* cmd)
 {
-	size_t size_cmd;
+	unsigned int len;
 
-	size_cmd = 10;
-	printf("$");
-	readline(&cmd, &size_cmd, stdin);
+	len = 0;
+	getline(&cmd, &len, stdin);
 }

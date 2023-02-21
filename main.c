@@ -1,14 +1,17 @@
 #include "shell.h"
 
 
-int main()
+int main(void)
 {
-	char *cmd;
+	char *cmd = NULL;
+	size_t len;
 
-	cmd = NULL;
+        len = 0;
 	while(1)
 	{
-		_readline(cmd);
+		printf("$$");
+	        getline(&cmd, &len, stdin);
+		printf("%s\n", cmd);
 	}
 	free(cmd);
 	return(0);
