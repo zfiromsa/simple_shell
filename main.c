@@ -36,7 +36,8 @@ int main(int argc, char *argv[])
 		else if (my_pid == 0)
 		{
 			execve(arr[0], arr, NULL);
-			printf("%s: no such file or directory\n", argv[0]);
+			printf("%s: no such file or"
+			" directory\n", argv[0]);
 		}
 		else
 			wait(&status);
