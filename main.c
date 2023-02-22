@@ -1,6 +1,6 @@
 #include "shell.h"
 
-int main()
+int main(int argc, char *argv[])
 {
         char *command = NULL;
         size_t len = 0;
@@ -8,7 +8,7 @@ int main()
         pid_t my_pid;
         int status, i;
 
-        while (1)
+        while (argc >= 0)
         {
                 char **arr;
 
@@ -36,6 +36,7 @@ int main()
                 else if(my_pid == 0)
                 {
                         execve(arr[0], arr, NULL);
+			printf("%s: no such file or directory\n", argv[0]);
                 }
                 else
                         wait(&status);
@@ -43,3 +44,4 @@ int main()
         free(command);
         return (0);
 }
+
