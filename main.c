@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
 		stkn = strtok(command, " \n");
 
 		arr = malloc(sizeof(char *) * 32);
-		arr[0] =stkn;
+		arr[0] = stkn;
 
 		i = 1;
 		while (stkn != NULL)
@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
 		}
 
 		my_pid = fork();
-		if (my_pid== -1)
+		if (my_pid == -1)
 		{
 			perror("ERROR");
 			return (1);
