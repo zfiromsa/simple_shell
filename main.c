@@ -1,24 +1,26 @@
 #include "shell.h"
+/**
+ * main - it simple shell
+ * @argc: main parm
+ * @argv: it main parm
+ * Return: succes 0, error 1, -1;
+ */
 
 int main(int argc, char *argv[])
 {
 	char *command = NULL;
 	size_t len = 0;
-	char *stkn;
+	char *stkn, **arr;
 	pid_t my_pid;
-	int status, i;
+	int i, status;
 
 	while (argc >= 0)
 	{
-		char **arr;
-
 		printf("($)");
 		getline(&command, &len, stdin);
 		stkn = strtok(command, " \n");
-
 		arr = malloc(sizeof(char *) * 32);
 		arr[0] = stkn;
-
 		i = 1;
 		while (stkn != NULL)
 		{
@@ -26,7 +28,6 @@ int main(int argc, char *argv[])
 			arr[i] = stkn;
 			i++;
 		}
-
 		my_pid = fork();
 		if (my_pid == -1)
 		{
@@ -36,8 +37,7 @@ int main(int argc, char *argv[])
 		else if (my_pid == 0)
 		{
 			execve(arr[0], arr, NULL);
-			printf("%s: no such file or"
-			" directory\n", argv[0]);
+			printf("%s: no such file or directory\n", argv[0]);
 		}
 		else
 			wait(&status);
