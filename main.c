@@ -3,10 +3,11 @@
  * main - it simple shell
  * @argc: main parm
  * @argv: it main parm
+ * @envp: it is environ
  * Return: succes 0, error 1, -1;
  */
 
-int main(int argc, char *argv[])
+int main(int argc, char *argv[], char **envp)
 {
 	char *command = NULL;
 	size_t len = 0;
@@ -36,7 +37,7 @@ int main(int argc, char *argv[])
 		}
 		else if (my_pid == 0)
 		{
-			execve(arr[0], arr, NULL);
+			execve(arr[0], arr, envp);
 			printf("%s: no such file or directory\n", argv[0]);
 		}
 		else
