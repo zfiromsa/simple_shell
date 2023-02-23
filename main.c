@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
 
 	while (argc >= 0)
 	{
-		printf("($)");
+		printf("#cisfun$ ");
 		getline(&command, &len, stdin);
 		stkn = strtok(command, " \n");
 		arr = malloc(sizeof(char *) * 32);
