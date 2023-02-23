@@ -19,6 +19,8 @@ int main(int argc, char *argv[], char **envp)
 	{
 		printf("#cisfun$ ");
 		getline(&command, &len, stdin);
+		if (strcmp(command, "exit\n") == 0)
+			return (0);
 		stkn = strtok(command, " \n");
 		arr = malloc(sizeof(char *) * 32);
 		arr[0] = stkn;
