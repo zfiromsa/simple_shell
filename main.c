@@ -17,7 +17,7 @@ int main(int argc, char *argv[], char **envp)
 
 	while (argc >= 0)
 	{
-		printf("#cisfun$ ");
+		printf("# ");
 		getline(&command, &len, stdin);
 		if (strcmp(command, "exit\n") == 0)
 			return (0);
