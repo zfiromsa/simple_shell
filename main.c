@@ -5,7 +5,7 @@ void main()
 	char *cmds[MAX_CMD];
 	char *cmd;
 	int i;
-	ssize_t len;
+	ssize_t len, rd;
 
 	i = 0;
 	len = 0;
@@ -13,8 +13,8 @@ void main()
 	while (true)
 	{
 		printf("enter your cmd: $ ");
-		cmd = getline(&cmd, &len, stdin);
-		if (strcmp(cmd, "ex") == 0)
+		rd = getline(&cmd, &len, stdin);
+		if (rd == -1 || strcmp(cmd, "ex") == 0)
 		{
 			free(cmd);
 			break;
