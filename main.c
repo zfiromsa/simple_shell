@@ -4,12 +4,14 @@ void main()
 {
 	char *cmds[MAX_CMD];
 	char *cmd;
-	int i;
+	int i, len;
 
 	i = 0;
+	len = 0;
 	while (true)
 	{
-		cmd = getline("enter your cmd: $ ");
+		printf("enter your cmd: $ ");
+		cmd = getline(&cmd, &len, stdin);
 		if (strcmp(cmd, "ex") == 0)
 		{
 			free(cmds);
