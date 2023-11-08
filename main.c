@@ -2,7 +2,7 @@
 
 void main()
 {
-	char *cmds[max_cmd], *cmd;
+	char *cmds[MAX_CMD], *cmd;
 	int i;
 
 	i = 0;
@@ -14,7 +14,7 @@ void main()
 			free(cmd);
 			break;
 		}
-		lists_cmd(&cmd, &cmds);
+		lists_cmd(cmd, &cmds);
 		while (cmds[i])
 		{
 			printf("cmd %d:  %s", i+1, cmds[i]);
