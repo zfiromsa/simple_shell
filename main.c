@@ -9,6 +9,7 @@ void main()
 
 	i = 0;
 	len = 0;
+	cmd = NULL;
 	while (true)
 	{
 		printf("enter your cmd: $ ");
