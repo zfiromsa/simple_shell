@@ -9,7 +9,7 @@ void main()
 	i = 0;
 	while (true)
 	{
-		cmd = readline("enter your cmd: $ ");
+		cmd = getline("enter your cmd: $ ");
 		if (strcmp(cmd, "ex") == 0)
 		{
 			free(cmds);
