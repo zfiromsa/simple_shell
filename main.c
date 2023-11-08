@@ -2,7 +2,8 @@
 
 void main()
 {
-	char *cmds[MAX_CMD], *cmd;
+	char *cmds[MAX_CMD];
+	char *cmd;
 	int i;
 
 	i = 0;
@@ -11,10 +12,10 @@ void main()
 		cmd = readline("enter your cmd: $ ");
 		if (strcmp(cmd, "ex") == 0)
 		{
-			free(cmd);
+			free(cmds);
 			break;
 		}
-		lists_cmd(cmd, &cmds);
+		lists_cmd(cmd, cmds);
 		while (cmds[i])
 		{
 			printf("cmd %d:  %s", i+1, cmds[i]);

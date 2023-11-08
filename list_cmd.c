@@ -15,7 +15,7 @@ char **lists_cmd(char *cmd, char **cmds)
 		i++;
 		token = strtok(NULL," ");
 	}
-	strcpy(cmds[i], NULL);
+	cmds[i] = NULL;
 	return (cmds);
 }
 
