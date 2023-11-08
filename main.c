@@ -4,7 +4,8 @@ void main()
 {
 	char *cmds[MAX_CMD];
 	char *cmd;
-	int i, len;
+	int i;
+	ssize_t len;
 
 	i = 0;
 	len = 0;
@@ -14,7 +15,7 @@ void main()
 		cmd = getline(&cmd, &len, stdin);
 		if (strcmp(cmd, "ex") == 0)
 		{
-			free(cmds);
+			free(cmd);
 			break;
 		}
 		lists_cmd(cmd, cmds);
@@ -24,7 +25,8 @@ void main()
 			free(cmds[i]);
 			i++;
 		}
-		free(cmds);
+		free(cmd);
+		cmd = NULL;
 	}
 }
 
