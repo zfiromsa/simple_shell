@@ -23,7 +23,7 @@ void main()
 		}
 		lists_cmd(cmd, &cmds);
 		print_listint(cmds);
-		exec_list(cmds);
+		exec_list(cmd);
 		free_list(&cmds);
 	}
 }
