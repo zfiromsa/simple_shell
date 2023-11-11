@@ -4,7 +4,7 @@ void main()
 {
 	_str_list *cmds;
 	char *cmd;
-	int i;
+	int i, status;
 	pid_t pid;
 	ssize_t rd;
 	size_t len;
@@ -28,8 +28,16 @@ void main()
 		{
 			perror("Error:");
 		}
-		exec_list(cmds);
-		print_listint(cmds);
+		if (pid == 0)
+		{
+			exec_list(cmds);
+			print_listint(cmds);
+			sleep(3);
+		}
+		else
+		{
+			wait(&status);
+		}
 		free_list(&cmds);
 	}
 }
