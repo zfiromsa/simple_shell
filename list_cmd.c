@@ -1,21 +1,19 @@
 #include "main.h"
 
-char **lists_cmd(char *cmd, char **cmds)
+_str_list **lists_cmd(char *cmd, _str_list **cmds)
 {
 	char *token;
 	int i;
 
 	i = 0;
-	token = strtok(cmds[i]," ");
+	token = strtok(cmd," ");
 	i++;
-	while (token != NULL && i < MAX_CMD)
+	add_nodeint_end(cmds, token);
+	while (token != NULL)
 	{
-		cmds[i] = malloc(strlen(token) + 1);
-		strcpy(cmds[i], token);
-		i++;
 		token = strtok(NULL," ");
+		add_nodeint_end(cmds, token);
 	}
-	cmds[i] = NULL;
 	return (cmds);
 }
 

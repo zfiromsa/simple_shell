@@ -2,14 +2,16 @@
 
 void main()
 {
-	char *cmds[MAX_CMD];
+	_str_list *cmds;
 	char *cmd;
 	int i;
-	ssize_t len, rd;
+	ssize_t rd;
+	size_t len;
 
 	i = 0;
 	len = 0;
 	cmd = NULL;
+	cmds = NULL;
 	while (true)
 	{
 		printf("enter your cmd: $ ");
@@ -19,15 +21,10 @@ void main()
 			free(cmd);
 			break;
 		}
-		lists_cmd(cmd, cmds);
-		while (cmds[i])
-		{
-			printf("cmd %d:  %s", i+1, cmds[i]);
-			free(cmds[i]);
-			i++;
-		}
-		free(cmd);
-		cmd = NULL;
+		lists_cmd(cmd, &cmds);
+		print_listint(cmds);
+		exec_with_list(cmds);
+		free_list(&cmds);
 	}
 }
 
