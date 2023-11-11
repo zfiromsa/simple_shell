@@ -2,6 +2,7 @@
 
 void exec_list(_str_list *head)
 {
+    printf("kkkkkkkkk");
     _str_list *tmp;
     int num_cmd;
     char **args;
