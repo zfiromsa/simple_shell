@@ -6,7 +6,7 @@ void exec_list(_str_list *head)
     int num_cmd;
     char **args;
 
-    tmp = &head;
+    tmp = head;
     num_cmd = 0;
     while (tmp != NULL)
     {
@@ -19,7 +19,7 @@ void exec_list(_str_list *head)
         fprintf(stderr, "Failed to allocate memory for args\n");
         exit(98);
     }
-    tmp = &head;
+    tmp = head;
     num_cmd = 0;
     while (tmp != NULL)
     {
