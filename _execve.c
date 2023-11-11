@@ -17,7 +17,7 @@ void exec_list(_str_list *head)
     args = malloc((num_cmd + 1) * sizeof(char *));
     if (args == NULL)
     {
-        fprintf(stderr, "Failed to allocate memory for args\n");
+        perror("Error");
         exit(98);
     }
     tmp = head;
@@ -29,7 +29,10 @@ void exec_list(_str_list *head)
         tmp = tmp->next;
     }
     args[num_cmd] = NULL;
-    execve(args[0], args, NULL);
+    if (execve(args[0], args, NULL) == -1)
+    {
+        perror("Error:");
+    }
     free(args);
 }
 

@@ -5,6 +5,7 @@ void main()
 	_str_list *cmds;
 	char *cmd;
 	int i;
+	pid_t pid;
 	ssize_t rd;
 	size_t len;
 
@@ -23,7 +24,13 @@ void main()
 		}
 		lists_cmd(cmd, &cmds);
 		print_listint(cmds);
-		exec_list(cmd);
+		pid = fork();
+		if (pid == -1)
+		{
+			perror("Error:");
+		}
+		exec_list(cmds);
+
 		free_list(&cmds);
 	}
 }
