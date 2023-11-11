@@ -23,14 +23,13 @@ void main()
 			break;
 		}
 		lists_cmd(cmd, &cmds);
-		print_listint(cmds);
 		pid = fork();
 		if (pid == -1)
 		{
 			perror("Error:");
 		}
 		exec_list(cmds);
-
+		print_listint(cmds);
 		free_list(&cmds);
 	}
 }
