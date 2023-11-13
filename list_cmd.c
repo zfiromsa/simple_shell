@@ -8,7 +8,7 @@ _str_list **lists_cmd(char *cmd, _str_list **cmds)
 	i = 0;
 	j = 0;
 	stlen = strlen(cmd);
-	while (cmd[i] < stlen)
+	while (i < stlen)
 	{
 		if (cmd[i] == ' ')
 		{
