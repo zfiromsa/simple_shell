@@ -13,7 +13,7 @@ void exec_list(_str_list *head, char **envp)
         num_cmd++;
         tmp = tmp->next;
     }
-    args = malloc((num_cmd + 1) * sizeof(char *));
+    args = malloc((num_cmd) * sizeof(char *));
     if (args == NULL)
     {
         perror("Error");
