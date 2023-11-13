@@ -28,7 +28,6 @@ void exec_list(_str_list *head, char **envp)
         num_cmd++;
         tmp = tmp->next;
     }
-    args[num_cmd] = NULL;
     printf("cmd[%d]: %s\n", num_cmd, args[num_cmd]);
     if (execve(args[0], args, envp) == -1)
     {
