@@ -9,6 +9,10 @@ _str_list **lists_cmd(char *cmd, _str_list **cmds)
 	token = strtok(cmd," ");
 	i++;
 	add_nodeint_end(cmds, token);
+	if (strcmp(token, "exit") == 0)
+	{
+		exit(0);
+	}
 	while (token != NULL)
 	{
 		token = strtok(NULL," ");
