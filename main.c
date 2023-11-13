@@ -11,7 +11,7 @@ int main(int argc, char **argv, char **env)
     list_cmds = NULL;
     (void)argv;
     (void)argc;
-    while (status)
+    while (_status)
     {
         printf("($) ");
         read_cmd(cmds);
