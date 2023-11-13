@@ -12,6 +12,8 @@ int main(int argc, char *argv[], char **envp)
 	len = 0;
 	cmd = NULL;
 	cmds = NULL;
+	(void)argc;
+	(void)argv;
 	while (true)
 	{
 		printf("enter your cmd: $ ");
