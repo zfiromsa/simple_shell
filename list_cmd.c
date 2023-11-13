@@ -1,4 +1,4 @@
-#include "main.c"
+#include "main.h"
 
 int Func_list_cmds(char *cmds, char **list_cmds)
 {
