@@ -6,7 +6,7 @@ int main(int argc, char **argv, char **env)
     char *cmds, **list_cmds;
 
 
-    _status = 0;
+    _status = 1;
     cmds = NULL;
     list_cmds = NULL;
     (void)argv;

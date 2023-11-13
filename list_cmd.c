@@ -11,7 +11,7 @@ int Func_list_cmds(char *cmds, char **list_cmds)
     if (list_cmds)
     {
         perror("Error ");
-        exit(1);
+        return (1);
     }
     token = strtok(cmds, " ");
     while (token != NULL)
@@ -22,13 +22,13 @@ int Func_list_cmds(char *cmds, char **list_cmds)
         }
         if (strcmp(token, "exit") || strcmp(token, "EXIT"))
         {
-            return (1);
+            return (0);
         }
         list_cmds[i] = token;
         token = strtok(cmds, " ");
         i++;
     }
     free(cmds);
-    return (0);
+    return (1);
 }
 
