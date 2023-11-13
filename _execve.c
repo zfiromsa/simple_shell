@@ -8,7 +8,7 @@ void exec_list(_str_list *head, char **envp)
 
     tmp = head;
     num_cmd = 0;
-    while (tmp != NULL && tmp->cmd_lis != NULL)
+    while (tmp != NULL && tmp->cmd_list != NULL)
     {
         num_cmd++;
         tmp = tmp->next;
