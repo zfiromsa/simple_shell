@@ -29,7 +29,7 @@ void exec_list(_str_list *head, char **envp)
         tmp = tmp->next;
     }
     args[num_cmd] = NULL;
-    printf("cmd[%s]: %s\n", num_cmd, args[num_cmd]);
+    printf("cmd[%d]: %s\n", num_cmd, args[num_cmd]);
     if (execve(args[0], args, envp) == -1)
     {
         perror("Error:");
