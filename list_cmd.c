@@ -3,27 +3,8 @@
 _str_list **lists_cmd(char *cmd, _str_list **cmds)
 {
 	char *token;
-	int i, j, stlen;
+	int i;
 
-	i = 0;
-	j = 0;
-	stlen = strlen(cmd);
-	while (i < stlen)
-	{
-		if (cmd[i] == ' ')
-		{
-			j++;
-			i++;
-			if(cmd[j] != ' ')
-			{
-				j++;
-				cmd[j] = cmd[i];
-			}
-		}
-		j++;
-		i++;
-	}
-	cmd[j] = '\0';
 	i = 0;
 	token = strtok(cmd," ");
 	i++;
