@@ -39,5 +39,6 @@ int main()
 		}
 		free_list(&cmds);
 	}
+	return (0);
 }
 
