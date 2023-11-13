@@ -24,7 +24,7 @@ void exec_list(_str_list *head, char **envp)
     while (tmp != NULL)
     {
         args[num_cmd] = tmp->cmd_list;
-        printf("cmd[%s]: %s\n", num_cmd, args[num_cmd]);
+        printf("cmd[%d]: %s\n", num_cmd, args[num_cmd]);
         num_cmd++;
         tmp = tmp->next;
     }
