@@ -15,15 +15,17 @@ int main(int argc, char **argv, char **env)
     {
         printf("($) ");
         read_cmd(cmds);
-        _status = Func_list_cmds(cmds, list_cmds);
-        //
+        if (Func_list_cmds(cmds, list_cmds) == NULL)
+        {
+            perror("main Error ");
+            break;
+        }
         i = 0;
         while (list_cmds[i])
         {
             printf("%d:  %s\n", i, list_cmds[i]);
             i++;
         }
-        //
         _status = execute(list_cmds, env);
     }
     return (0);

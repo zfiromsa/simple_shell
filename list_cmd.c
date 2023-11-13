@@ -1,6 +1,6 @@
 #include "main.h"
 
-int Func_list_cmds(char *cmds, char **list_cmds)
+char **Func_list_cmds(char *cmds, char **list_cmds)
 {
     int BUFFER, i;
     char *token;
@@ -8,10 +8,10 @@ int Func_list_cmds(char *cmds, char **list_cmds)
     BUFFER = 1024;
     i = 0;
     list_cmds = malloc(BUFFER * sizeof(char *));
-    if (list_cmds)
+    if (list_cmds == NULL)
     {
         perror("Error ");
-        return (1);
+        return (NULL);
     }
     token = strtok(cmds, " ");
     while (token != NULL)
@@ -25,10 +25,10 @@ int Func_list_cmds(char *cmds, char **list_cmds)
             return (0);
         }
         list_cmds[i] = token;
-        token = strtok(cmds, " ");
+        token = strtok(NULL, " ");
         i++;
     }
     free(cmds);
-    return (1);
+    return (list_cmds);
 }
 
