@@ -1,11 +1,10 @@
 #include "main.h"
 
-void exec_list(_str_list *head)
+void exec_list(_str_list *head, char **envp)
 {
     _str_list *tmp;
     int num_cmd;
     char **args;
-    char *envp[] = {"PATH=/bin", NULL};
 
     tmp = head;
     num_cmd = 0;

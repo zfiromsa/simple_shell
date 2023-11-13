@@ -1,6 +1,6 @@
 #include "main.h"
 
-int main()
+int main(int argc, char *argv[], char **envp)
 {
 	_str_list *cmds;
 	char *cmd;
@@ -29,7 +29,7 @@ int main()
 		}
 		if (pid == 0)
 		{
-			exec_list(cmds);
+			exec_list(cmds, envp);
 			print_listint(cmds);
 			sleep(3);
 		}
