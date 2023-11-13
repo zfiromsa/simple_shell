@@ -23,7 +23,7 @@ int execute(char **list_cmds,char **env)
         i = 0;
         while (list_cmds[i])
         {
-            printf("%d:  %s\n", i, list_cmds);
+            printf("%d:  %s\n", i, list_cmds[i]);
             i++;
         }
         wait(&status);
