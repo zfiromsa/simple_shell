@@ -1,6 +1,6 @@
 #include "main.h"
 
-void lists_cmd(char *cmd, _str_list **cmds)
+_str_list **lists_cmd(char *cmd, _str_list **cmds)
 {
 	char *token;
 	int i;
@@ -14,6 +14,6 @@ void lists_cmd(char *cmd, _str_list **cmds)
 		token = strtok(NULL," ");
 		add_nodeint_end(cmds, token);
 	}
-	exit(0);
+	return (cmds);
 }
 
