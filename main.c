@@ -2,11 +2,11 @@
 
 int main(int argc, char **argv, char **env)
 {
-    int status;
+    int _status;
     char *cmds, **list_cmds;
 
 
-    status = 0;
+    _status = 0;
     cmds = NULL;
     list_cmds = NULL;
     (void)argv;
@@ -15,8 +15,8 @@ int main(int argc, char **argv, char **env)
     {
         printf("($) ");
         read_cmd(cmds);
-        status = Func_list_cmds(cmds, list_cmds);
-        status = execute(list_cmds, env);
+        _status = Func_list_cmds(cmds, list_cmds);
+        _status = execute(list_cmds, env);
     }
     return (0);
 }
