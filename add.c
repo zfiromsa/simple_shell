@@ -1,6 +1,6 @@
 #include "main.h"
 
-_str_list *add_nodeint_end(_str_list **head, char *cmd)
+void add_nodeint_end(_str_list **head, char *cmd)
 {
 	_str_list *new, *tmp;
 
@@ -12,7 +12,7 @@ _str_list *add_nodeint_end(_str_list **head, char *cmd)
 	if (*head == NULL)
 	{
 		*head = new;
-		return (*head);
+		exit(0);
 	}
 	tmp = *head;
 	while (tmp->next != NULL)
@@ -20,6 +20,6 @@ _str_list *add_nodeint_end(_str_list **head, char *cmd)
 		tmp = tmp->next;
 	}
 	tmp->next = new;
-	return (*head);
+	exit(0);
 }
 
