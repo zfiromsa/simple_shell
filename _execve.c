@@ -24,12 +24,11 @@ void exec_list(_str_list *head, char **envp)
     while (tmp != NULL)
     {
         args[num_cmd] = tmp->cmd_list;
-        printf("cmd[%d]: %s\n", num_cmd, args[num_cmd]);
         num_cmd++;
         tmp = tmp->next;
     }
-    printf("cmd[%d]: %s\n", num_cmd, args[num_cmd]);
-    if (execve(args[0], args, envp) == -1)
+    char *argv[] = {"/bin/ls", "-l", "/usr/", NULL};
+    if (execve(argv[0], argv, envp) == -1)
     {
         perror("Error:");
     }
