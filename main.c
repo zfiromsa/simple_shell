@@ -1,45 +1,23 @@
 #include "main.h"
 
-int main(int argc, char *argv[], char **envp)
+int main(int argc, char **argv, char **env)
 {
-	_str_list *cmds;
-	char *cmd;
-	int status;
-	pid_t pid;
-	ssize_t rd;
-	size_t len;
+    int status, BUFFER;
+    char *cmds, **list_cmds;
 
-	len = 0;
-	cmd = NULL;
-	cmds = NULL;
-	(void)argc;
-	(void)argv;
-	while (true)
-	{
-		printf("($) ");
-		rd = getline(&cmd, &len, stdin);
-		if (rd == -1 || strcmp(cmd, "ex") == 0)
-		{
-			free(cmd);
-			break;
-		}
-		lists_cmd(cmd, &cmds);
-		pid = fork();
-		if (pid == -1)
-		{
-			perror("Error:");
-		}
-		if (pid == 0)
-		{
-			exec_list(cmds, envp);
-			sleep(3);
-		}
-		else
-		{
-			wait(&status);
-		}
-		free_list(&cmds);
-	}
-	return (0);
+
+    status = 0;
+    cmds = NULL;
+    list_cmds = NULL;
+    (void)argv;
+    (void)argc;
+    while (status)
+    {
+        printf("($) ");
+        read_cmd(cmds);
+        status = Func_list_cmds(cmds, list_cmds);
+        status = execute(list_cmds, env);
+    }
+    return (0);
 }
 

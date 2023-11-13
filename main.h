@@ -10,16 +10,9 @@
 #include <sys/wait.h>
 #include <stdbool.h>
 
-typedef struct str_list
-{
-char *cmd_list;
-struct str_list *next;
-} _str_list;
-
-_str_list **lists_cmd(char *cmd, _str_list **cmds);
-void free_list(_str_list **head);
-void exec_list(_str_list *head, char **envp);
-_str_list *add_nodeint_end(_str_list **head, char *cmd);
+void read_cmd(char *cmds);
+void Func_list_cmds(char *cmds, char **list_cmds);
+int execute(char **list_cmds,char **env);
 
 #endif
 

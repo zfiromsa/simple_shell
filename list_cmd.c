@@ -1,23 +1,34 @@
-#include "main.h"
+#include "main.c"
 
-_str_list **lists_cmd(char *cmd, _str_list **cmds)
+int Func_list_cmds(char *cmds, char **list_cmds)
 {
-	char *token;
-	int i;
+    int BUFFER, i;
+    char *token;
 
-	i = 0;
-	token = strtok(cmd," ");
-	i++;
-	add_nodeint_end(cmds, token);
-	if (strcmp(token, "exit") == 0)
-	{
-		exit(0);
-	}
-	while (token != NULL)
-	{
-		token = strtok(NULL," ");
-		add_nodeint_end(cmds, token);
-	}
-	return (cmds);
+    BUFFER = 1024;
+    i = 0;
+    list_cmds = malloc(BUFFER * sizeof(char *));
+    if (list_cmds)
+    {
+        perror("Error ");
+        exit(1);
+    }
+    token = strtok(cmds, " ");
+    while (token != NULL)
+    {
+        if (token[0] == '#')
+        {
+            break;
+        }
+        if (strcmp(token, "exit") || strcmp(token, "EXIT"))
+        {
+            return (1);
+        }
+        list_cmds[i] = token;
+        token = strtok(cmds, " ");
+        i++;
+    }
+    free(cmds);
+    return (0);
 }
 
