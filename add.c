@@ -6,7 +6,7 @@ void add_nodeint_end(_str_list **head, char *cmd)
 
 	new = malloc(sizeof(_str_list));
 	if (new == NULL)
-		return (NULL);
+		exit(0);
 	new->cmd_list = cmd;
 	new->next = NULL;
 	if (*head == NULL)

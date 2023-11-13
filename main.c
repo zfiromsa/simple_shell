@@ -32,7 +32,6 @@ int main(int argc, char *argv[], char **envp)
 		if (pid == 0)
 		{
 			exec_list(cmds, envp);
-			print_listint(cmds);
 			sleep(3);
 		}
 		else
