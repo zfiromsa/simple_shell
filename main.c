@@ -1,15 +1,14 @@
 #include "main.h"
 
-void main()
+int main()
 {
 	_str_list *cmds;
 	char *cmd;
-	int i, status;
+	int status;
 	pid_t pid;
 	ssize_t rd;
 	size_t len;
 
-	i = 0;
 	len = 0;
 	cmd = NULL;
 	cmds = NULL;
