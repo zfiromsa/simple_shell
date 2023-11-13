@@ -2,7 +2,7 @@
 
 int main(int argc, char **argv, char **env)
 {
-    int status, BUFFER;
+    int status;
     char *cmds, **list_cmds;
 
 

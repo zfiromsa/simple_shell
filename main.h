@@ -11,7 +11,7 @@
 #include <stdbool.h>
 
 void read_cmd(char *cmds);
-void Func_list_cmds(char *cmds, char **list_cmds);
+int Func_list_cmds(char *cmds, char **list_cmds);
 int execute(char **list_cmds,char **env);
 
 #endif
