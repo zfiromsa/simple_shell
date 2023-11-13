@@ -29,7 +29,7 @@ void exec_list(_str_list *head, char **envp)
     }
     if (execve(args[0], args, envp) == -1)
     {
-        perror("Error:");
+        perror("Error");
     }
     free(args);
 }

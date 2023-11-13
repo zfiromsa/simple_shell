@@ -16,7 +16,7 @@ int main(int argc, char *argv[], char **envp)
 	(void)argv;
 	while (true)
 	{
-		printf("enter your cmd: $ ");
+		printf("($) ");
 		rd = getline(&cmd, &len, stdin);
 		if (rd == -1 || strcmp(cmd, "ex") == 0)
 		{

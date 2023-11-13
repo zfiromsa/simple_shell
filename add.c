@@ -5,7 +5,7 @@ _str_list *add_nodeint_end(_str_list **head, char *cmd)
 	_str_list *new, *tmp;
 
 	new = malloc(sizeof(_str_list));
-	if (new == NULL || cmd == NULL)
+	if (new == NULL)
 		return (NULL);
 	new->cmd_list = cmd;
 	new->next = NULL;
