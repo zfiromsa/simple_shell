@@ -3,7 +3,7 @@
 int execute(char **list_cmds,char **env)
 {
     pid_t pid;
-    int status;
+    int status, i;
 
     pid = fork();
     if (pid == -1)
@@ -20,6 +20,12 @@ int execute(char **list_cmds,char **env)
     }
     else
     {
+        i = 0;
+        while (list_cmds[i])
+        {
+            printf("%d:  %s\n", i, list_cmds);
+            i++;
+        }
         wait(&status);
     }
     free(list_cmds);
