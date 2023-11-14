@@ -30,9 +30,13 @@ char **Func_list_cmds(char *cmds, char **list_cmds)
 		token = strtok(NULL, " ");
 		i++;
 		list_cmds = realloc(list_cmds, ((i + 1) * sizeof(char *)));
+		if (list_cmds == NULL)
+		{
+			_free(list_cmds);
+			return (list_cmds);
+		}
 	}
 	list_cmds[i] = NULL;
-	printf("88888888888888");
 	return (list_cmds);
 }
 

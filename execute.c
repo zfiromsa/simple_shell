@@ -28,9 +28,8 @@ int execute(char **list_cmds, char **env)
 	else
 	{
 		wait(&status);
-	}
-	printf("7777777777777");
-	_free(list_cmds);
+		_free(list_cmds);
+	}	
 	return (1);
 }
 
