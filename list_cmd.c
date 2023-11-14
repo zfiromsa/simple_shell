@@ -20,7 +20,7 @@ char **Func_list_cmds(char *cmds, char **list_cmds)
         {
             break;
         }
-        strcpy(list_cmds[i], token);
+        list_cmds[i] = token;
  printf("test %d:\t %s\n", i, list_cmds[i]);
         if (list_cmds == NULL)
         {
