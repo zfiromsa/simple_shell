@@ -25,13 +25,10 @@ int main(int argc, char **argv, char **env)
 		list_cmds = Func_list_cmds(cmds, list_cmds);
 		if (list_cmds == NULL)
 		{
+			perror("Error main");
 			break;
 		}
-		else
-		{
-			_status = execute(list_cmds, env);
-		}
-		
+		_status = execute(list_cmds, env);
 	}
 	return (0);
 }
