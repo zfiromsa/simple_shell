@@ -4,17 +4,15 @@ int execute(char **list_cmds,char **env)
 {
     pid_t pid;
     int status;
-    char *argv[] = {"/bin/ls", "-l", "/usr/", NULL};
 
     pid = fork();
-    (void)list_cmds;
     if (pid == -1)
     {
         perror("Error ");
     }
     if (pid == 0)
     {
-        if (execve(argv[0], argv, env) == -1)
+        if (execve(list_cmds[0], list_cmds, env) == -1)
         {
             perror("Error - ");
             return (0);
