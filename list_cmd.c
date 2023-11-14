@@ -5,7 +5,7 @@ char **Func_list_cmds(char *cmds, char **list_cmds)
     int BUFFER, i;
     char *token;
 
-    BUFFER = 24;
+    BUFFER = 1024;
     i = 0;
     list_cmds = malloc(BUFFER * sizeof(char *));
     if (list_cmds == NULL)
