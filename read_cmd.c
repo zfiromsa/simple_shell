@@ -7,7 +7,7 @@ void read_cmd(char *cmds)
 
     len = 0;
     rd = getline(&cmds, &len, stdin);
- printf("test read:\t %s\n", i, cmds);
+ printf("test read:\t %s\n", cmds);
     if (rd == -1)
     {
         perror("Error ");
