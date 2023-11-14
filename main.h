@@ -10,7 +10,7 @@
 #include <sys/wait.h>
 #include <stdbool.h>
 
-void read_cmd(char *cmds);
+char *read_cmd(char *cmds);
 char **Func_list_cmds(char *cmds, char **list_cmds);
 int execute(char **list_cmds,char **env);
 
