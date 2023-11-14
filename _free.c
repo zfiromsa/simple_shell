@@ -2,16 +2,13 @@
 
 void _free(char **list_cmds)
 {
-    int i, j;
+    int i;
 
     i = 0;
-    j = 1;
     while (list_cmds[i] != NULL)
     {
-        list_cmds[j] = list_cmds[i];
         free(list_cmds[i]);
         i++;
-        j++;
     }
     free(list_cmds);
 }
