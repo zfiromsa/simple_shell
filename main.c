@@ -23,10 +23,6 @@ int main(int argc, char **argv, char **env)
 	{
 		printf("($) ");
 		cmds = read_cmd(cmds);
-		if (cmds == NULL)
-		{
-			return (0);
-		}
 		list_cmds = Func_list_cmds(cmds, list_cmds);
 		if (list_cmds == NULL)
 		{
