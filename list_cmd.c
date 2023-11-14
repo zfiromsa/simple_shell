@@ -32,6 +32,7 @@ char **Func_list_cmds(char *cmds, char **list_cmds)
 		list_cmds = realloc(list_cmds, ((i + 1) * sizeof(char *)));
 	}
 	list_cmds[i] = NULL;
+	printf("88888888888888");
 	return (list_cmds);
 }
 
