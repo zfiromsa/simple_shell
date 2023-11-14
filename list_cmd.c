@@ -21,14 +21,12 @@ char **Func_list_cmds(char *cmds, char **list_cmds)
             break;
         }
         list_cmds[i] = token;
- printf("test %d:\t %s\n", i, list_cmds[i]);
         if (list_cmds == NULL)
         {
             perror("Error func");
             break;
         }
         token = strtok(NULL, " ");
- printf("token test %d:\t %s\n", i, token);
         i++;
     }
     free(cmds);

@@ -21,6 +21,7 @@ int main(int argc, char **argv, char **env)
             perror("main Error ");
             break;
         }
+printf("test:\t %s\n", list_cmds);
         while (list_cmds[i])
         {
             printf("%d:  %s\n", i, list_cmds[i]);
