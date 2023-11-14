@@ -33,7 +33,7 @@ char **Func_list_cmds(char *cmds, char **list_cmds)
 		if (list_cmds == NULL)
 		{
 			perror("Error Fun 2");
-			break;
+			return (list_cmds);
 		}
 	}
 	list_cmds[i] = NULL;
