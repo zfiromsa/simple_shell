@@ -28,6 +28,7 @@ int main(int argc, char **argv, char **env)
             printf("%d:  %s\n", i, list_cmds[i]);
             i++;
         }
+        printf("%d:  %s\n", i, list_cmds[i]);
         _status = execute(list_cmds, env);
     }
     return (0);
