@@ -16,9 +16,11 @@ char **Func_list_cmds(char *cmds, char **list_cmds)
 	list_cmds = (char **)malloc(sizeof(char *));
 	if (list_cmds == NULL)
 	{
+		printf("ppppppppgggggggggggpppp");
 		perror("Error ");
 		return (NULL);
 	}
+	printf("ppppppfffffffffffffpppppp");
 	token = strtok(cmds, " ");
 	while (token != NULL)
 	{
