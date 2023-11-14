@@ -4,7 +4,6 @@ int execute(char **list_cmds,char **env)
 {
     pid_t pid;
     int status;
-    char **argvs;
     char *argv[] = {"/bin/ls", "-l", "/usr/", NULL};
 
     pid = fork();
