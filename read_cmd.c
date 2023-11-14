@@ -6,7 +6,7 @@ void read_cmd(char *cmds)
     ssize_t rd;
 
     len = 0;
-    rd = getline(&cmds, &len, stdin);
+    rd = getline(cmds, &len, stdin);
     if (rd == -1)
     {
         perror("Error ");
