@@ -29,7 +29,6 @@ char **Func_list_cmds(char *cmds, char **list_cmds)
         token = strtok(NULL, " ");
         i++;
     }
-    free(cmds);
     return (list_cmds);
 }
 
