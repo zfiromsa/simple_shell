@@ -20,11 +20,6 @@ char **Func_list_cmds(char *cmds, char **list_cmds)
         {
             break;
         }
-        if (strcmp(token, "exit") || strcmp(token, "EXIT"))
-        {
- printf("test 3:\t %s\n", token);
-            return (0);
-        }
         strcpy(list_cmds[i], token);
  printf("test %d:\t %s\n", i, list_cmds[i]);
         if (list_cmds == NULL)
