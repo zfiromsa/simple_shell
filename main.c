@@ -23,12 +23,14 @@ int main(int argc, char **argv, char **env)
 		printf("($) ");
 		cmds = read_cmd(cmds);
 		list_cmds = Func_list_cmds(cmds, list_cmds);
-		free(cmds);
+		printf("pppppppppppp");
 		if (list_cmds == NULL)
 		{
 			break;
 		}
+		printf("kkkkkkkkkkkkkk");
 		_status = execute(list_cmds, env);
+		printf("lllllllllllll");
 		_free(list_cmds);
 	}
 	return (0);
