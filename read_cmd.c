@@ -16,7 +16,6 @@ char *read_cmd(char *cmds)
 	if (rd == -1)
 	{
 		perror("Error read");
-		free(cmds);
 		exit(1);
 	}
 	return (cmds);
