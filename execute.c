@@ -28,7 +28,6 @@ int execute(char **list_cmds, char **env)
 	else
 	{
 		wait(&status);
-		_free(list_cmds);
 	}	
 	return (1);
 }
