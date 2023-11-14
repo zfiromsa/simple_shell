@@ -24,7 +24,12 @@ char **Func_list_cmds(char *cmds, char **list_cmds)
         {
             return (0);
         }
-        strcpy(list_cmds[i],token);
+        list_cmds[i] = strdup(token);
+        if (list_cmds == NULL)
+        {
+            perror("Error func");
+            break;
+        }
         token = strtok(NULL, " ");
         i++;
     }
