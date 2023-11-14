@@ -28,6 +28,10 @@ char **Func_list_cmds(char *cmds, char **list_cmds)
 		}
 		list_cmds[i] = token;
 		token = strtok(NULL, " ");
+		if (token == NULL)
+		{
+			break;
+		}
 		i++;
 		list_cmds = realloc(list_cmds, ((i + 1) * sizeof(char *)));
 		if (list_cmds)
