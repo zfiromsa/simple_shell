@@ -9,7 +9,7 @@ void _free(char **list_cmds)
     list = NULL;
     while (list_cmds[i] != NULL)
     {
-        list = list_cmds;
+        list = &list_cmds;
         free(list_cmds[i]);
         i++;
     }
