@@ -19,7 +19,7 @@ char *read_cmd(char *cmds)
 		free(cmds);
 		exit(1);
 	}
-	if (strcmp(cmds, "exit"))
+	if (strcmp(cmds, "exit") == 0)
 	{
 		return (NULL);
 	}
