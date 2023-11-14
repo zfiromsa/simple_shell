@@ -6,7 +6,7 @@ char **Func_list_cmds(char *cmds, char **list_cmds)
     char *token;
 
     BUFFER = 1024;
-    i = 0;
+    i = 1;
     list_cmds = malloc(BUFFER * sizeof(char *));
     if (list_cmds == NULL)
     {
@@ -14,22 +14,22 @@ char **Func_list_cmds(char *cmds, char **list_cmds)
         return (NULL);
     }
     token = strtok(cmds, " ");
+    list_cmds[0] = token;
     while (token != NULL)
     {
         if (token[0] == '#')
         {
             break;
         }
-        list_cmds[i] = token;
         if (list_cmds == NULL)
         {
             perror("Error func");
             break;
         }
         token = strtok(NULL, " ");
+        list_cmds[i] = token;
         i++;
     }
-    list_cmds[i] = NULL;
     return (list_cmds);
 }
 
