@@ -1,6 +1,6 @@
 #include "main.h"
 
-void read_cmd(char *cmds)
+char *read_cmd(char *cmds)
 {
     size_t len;
     ssize_t rd;
@@ -13,4 +13,5 @@ void read_cmd(char *cmds)
         free(cmds);
         exit(1);
     }
+    return (cmds);
 }

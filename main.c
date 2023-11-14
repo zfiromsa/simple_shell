@@ -14,7 +14,7 @@ int main(int argc, char **argv, char **env)
     while (_status)
     {
         printf("($) ");
-        read_cmd(cmds);
+        cmds = read_cmd(cmds);
         i = 0;
         printf("test:\t %s\n", cmds);
         if (Func_list_cmds(cmds, list_cmds) == NULL)
