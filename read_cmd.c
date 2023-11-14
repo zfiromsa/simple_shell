@@ -4,7 +4,7 @@
  * read_cmd - it read from stdin store to a gaven parmet
  *
  * @cmds: pointer hold the address of string
- * Return: address of string or NULL
+ * Return: address of string
  */
 char *read_cmd(char *cmds)
 {
