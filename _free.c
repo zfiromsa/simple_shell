@@ -2,7 +2,7 @@
 
 void _free(char **list_cmds)
 {
-    char *list;
+    char **list;
     int i;
 
     i = 0;
