@@ -8,7 +8,7 @@ void _free(char **list_cmds)
     i = 0;
     while (list_cmds[i] != NULL)
     {
-        list = &list_cmds;
+        list = list_cmds;
         free(list_cmds[i]);
         i++;
     }
