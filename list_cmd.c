@@ -2,12 +2,11 @@
 
 char **Func_list_cmds(char *cmds, char **list_cmds)
 {
-    int BUFFER, i;
+    int i;
     char *token;
 
-    BUFFER = 1024;
     i = 0;
-    list_cmds = malloc(BUFFER * sizeof(char *));
+    list_cmds = malloc(sizeof(char *));
     if (list_cmds == NULL)
     {
         perror("Error ");
@@ -23,6 +22,12 @@ char **Func_list_cmds(char *cmds, char **list_cmds)
         list_cmds[i] = token;
         token = strtok(NULL, " ");
         i++;
+        list_cmds = realloc(list_cmds, ((i + 1) * sizeof(char *)));
+        if (list_cmds)
+        {
+            perror("Error func");
+            break;
+        }
     }
     list_cmds[i] = NULL;
     return (list_cmds);
