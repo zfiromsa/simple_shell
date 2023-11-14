@@ -31,10 +31,10 @@ char **Func_list_cmds(char *cmds, char **list_cmds)
 		i++;
 		list_cmds = realloc(list_cmds, ((i + 1) * sizeof(char *)));
 		if (!(list_cmds))
-        {
-            perror("Error Fun 2");
-            break;
-        }
+		{
+			perror("Error Fun 2");
+			break;
+		}
 	}
 	list_cmds[i] = NULL;
 	return (list_cmds);

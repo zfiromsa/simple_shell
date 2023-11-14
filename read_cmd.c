@@ -4,7 +4,7 @@
  * read_cmd - it read from stdin store to a gaven parmet
  *
  * @cmds: pointer hold the address of string
- * Return: address of string
+ * Return: address of string or NULL
  */
 char *read_cmd(char *cmds)
 {
@@ -18,6 +18,10 @@ char *read_cmd(char *cmds)
 		perror("Error read");
 		free(cmds);
 		exit(1);
+	}
+	if (strcmp(cmds, "exit"))
+	{
+		return (NULL);
 	}
 	return (cmds);
 }
