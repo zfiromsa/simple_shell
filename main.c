@@ -16,6 +16,7 @@ int main(int argc, char **argv, char **env)
         printf("($) ");
         read_cmd(cmds);
         i = 0;
+        printf("test:\t %s\n", cmds);
         if (Func_list_cmds(cmds, list_cmds) == NULL)
         {
             perror("main Error ");
