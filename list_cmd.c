@@ -24,7 +24,7 @@ char **Func_list_cmds(char *cmds, char **list_cmds)
         {
             return (0);
         }
-        list_cmds[i] = token;
+        strcpy(list_cmds[i],token);
         token = strtok(NULL, " ");
         i++;
     }
