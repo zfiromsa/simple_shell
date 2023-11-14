@@ -6,7 +6,6 @@ void _free(char **list_cmds)
 
     i = 0;
     j = 1;
-    list = NULL;
     while (list_cmds[i] != NULL)
     {
         list_cmds[j] = list_cmds[i];
