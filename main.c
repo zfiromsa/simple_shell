@@ -10,7 +10,7 @@
  */
 int main(int argc, char **argv, char **env)
 {
-	int _status, i;
+	int _status;
 	char *cmds, **list_cmds;
 
 	_status = 1;
@@ -22,7 +22,6 @@ int main(int argc, char **argv, char **env)
 	{
 		printf("($) ");
 		cmds = read_cmd(cmds);
-		i = 0;
 		list_cmds = Func_list_cmds(cmds, list_cmds);
 		if (list_cmds == NULL)
 		{
