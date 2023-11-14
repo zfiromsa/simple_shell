@@ -15,14 +15,13 @@ int execute(char **list_cmds, char **env)
 	pid = fork();
 	if (pid == -1)
 	{
-		perror("Error exc 1");
+		perror("Error ");
 	}
 	if (pid == 0)
 	{
 		if (execve(list_cmds[0], list_cmds, env) == -1)
 		{
-			perror("Error - ");
-			return (0);
+			perror("Error ");
 		}
 	}
 	else
