@@ -17,7 +17,7 @@ char **Func_list_cmds(char *cmds, char **list_cmds)
     list_cmds[0] = token;
     printf("lidt 0:  %s\n", list_cmds[0]);
     printf("token 0:  %s\n", token);
-    while (token != NULL)
+    while (token)
     {
         if (token[0] == '#')
         {
