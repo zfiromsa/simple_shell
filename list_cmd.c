@@ -17,7 +17,7 @@ char **Func_list_cmds(char *cmds, char **list_cmds)
     list_cmds[0] = token;
     printf("lidt 0:  %s\n", list_cmds[0]);
     printf("token 0:  %s\n", token);
-    while (token)
+    while (token != NULL)
     {
         if (token[0] == '#')
         {
@@ -28,12 +28,11 @@ char **Func_list_cmds(char *cmds, char **list_cmds)
             perror("Error func");
             break;
         }
-        token = strtok(NULL, " ");
         list_cmds[i] = token;
-        printf("lidt %d:  %s\n", i, list_cmds[i]);
-        printf("token %d:  %s\n", i, token);
+        token = strtok(NULL, " ");
         i++;
     }
+    list_cmds[i] = "NULL";
     return (list_cmds);
 }
 
