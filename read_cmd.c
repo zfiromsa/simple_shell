@@ -15,7 +15,7 @@ char *read_cmd(char *cmds)
 	rd = getline(&cmds, &len, stdin);
 	if (rd == -1)
 	{
-		perror("Error ");
+		perror("Error read");
 		free(cmds);
 		exit(1);
 	}
