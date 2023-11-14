@@ -22,7 +22,7 @@ int execute(char **list_cmds,char **env)
     {
         wait(&status);
     }
-    free(list_cmds);
+    _free(list_cmds);
     return (1);
 }
 
