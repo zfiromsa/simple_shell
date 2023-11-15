@@ -14,6 +14,7 @@ int execute(char **list_cmds)
 	char *argv[] = {"/bin/ls", "-l", "/usr/", NULL};
 
 	pid = fork();
+	(void)list_cmds;
 	if (pid == -1)
 	{
 		perror("Error pid");
