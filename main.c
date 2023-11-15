@@ -32,6 +32,7 @@ int main(int argc, char **argv, char **env)
 		{
 		printf("%i:   %s\n", i, list_cmds[i]);
 		i++;
+		printf("%i:\n", i);
 		}
 		printf("%i:   %s\n", i, list_cmds[i]);
 		_status = execute(list_cmds, env);
