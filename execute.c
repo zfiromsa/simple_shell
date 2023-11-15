@@ -22,11 +22,12 @@ int execute(char **list_cmds, char **env)
 		if (execve(list_cmds[0], list_cmds, env) == -1)
 		{
 			perror("Error exc");
-					}
+		}
 	}
 	else
 	{
 		wait(&status);	
 	}
-	}
+	return (0)
+}
 

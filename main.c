@@ -22,7 +22,7 @@ int main(int argc, char **argv, char **env)
 	{
 		printf("($) ");
 		cmds = read_cmd(cmds);
-		_status = Func_list_cmds(cmds, list_cmds);
+		list_cmds = Func_list_cmds(cmds, list_cmds);
 		if (list_cmds == NULL)
 		{
 			break;
