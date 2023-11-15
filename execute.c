@@ -22,7 +22,7 @@ int execute(char **list_cmds)
 	}
 	else if (pid == 0)
 	{
-		if (execve(arg[0], arg, NULL) == -1)
+		if (execve(argv[0], argv, NULL) == -1)
 		{
 			perror("Error exc");
 			exit(0);
