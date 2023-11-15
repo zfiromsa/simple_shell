@@ -37,7 +37,19 @@ char **Func_list_cmds(char *cmds, char **list_cmds)
 		}
 	}
 	list_cmds[i] = NULL;
+	i = 0;
+		while (list_cmds[i])
+		{
+			printf("%s\t\n", list_cmds[i]);
+			i++;
+		}
+		i = 0;
 	free(cmds);
+		while (list_cmds[i])
+		{
+			printf("%s\t\n", list_cmds[i]);
+			i++;
+		}
 	return (list_cmds);
 }
 
