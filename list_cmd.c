@@ -37,6 +37,7 @@ char **Func_list_cmds(char *cmds, char **list_cmds)
 		}
 	}
 	list_cmds[i] = NULL;
+	free(cmds);
 	return (list_cmds);
 }
 
