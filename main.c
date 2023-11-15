@@ -30,8 +30,8 @@ int main(int argc, char **argv, char **env)
 		}
 		free(cmds);
 		execute(list_cmds, env);
-		_free(list_cmds);
 	}
+	_free(list_cmds);
 	return (0);
 }
 
