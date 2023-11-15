@@ -10,10 +10,9 @@
  */
 int main(int argc, char **argv, char **env)
 {
-	int _status, i;
+	int _status;
 	char *cmds, **list_cmds;
 
-	i = 0;
     _status = 1;
 	cmds = NULL;
 	list_cmds = NULL;
@@ -34,17 +33,8 @@ int main(int argc, char **argv, char **env)
 			free(cmds);
 			break;
 		}
-		while (list_cmds[i])
-		{
-		printf("%i:   %s\n", i, list_cmds[i]);
-		i++;
-		printf("%i:\n", i);
-		}
-		printf("%i:   %s\n", i, list_cmds[i]);
 		_status = execute(list_cmds, env);
 	}
-	_free(list_cmds);
-	free(cmds);
 	return (0);
 }
 
