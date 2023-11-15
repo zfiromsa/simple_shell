@@ -8,7 +8,7 @@
  * @env: enviroment
  * Return: 0
  */
-int main(int argc, char **argv, char **env)
+int main()
 {
 	int _status;
 	char *cmds, **list_cmds;
@@ -16,8 +16,6 @@ int main(int argc, char **argv, char **env)
     _status = 1;
 	cmds = NULL;
 	list_cmds = NULL;
-	(void)argv;
-	(void)argc;
 	while (_status != -1)
 	{
 		printf("($) ");
@@ -34,7 +32,7 @@ int main(int argc, char **argv, char **env)
 			free(cmds);
 			break;
 		}
-		_status = execute(list_cmds, env);	
+		_status = execute(list_cmds);	
 		_free(list_cmds);
 	}
 	return (0);
