@@ -9,10 +9,8 @@
  */
 char **Func_list_cmds(char *cmds, char **list_cmds)
 {
-	int i;
 	char *token;
 
-	i = 0;
 	list_cmds = (char **)malloc(sizeof(char *));
 	if (list_cmds == NULL)
 	{
