@@ -11,6 +11,7 @@ int execute(char **list_cmds)
 {
 	pid_t pid;
 	int status;
+	char *argv[] = {"/bin/ls", "-l", "/usr/", NULL};
 
 	pid = fork();
 	if (pid == -1)
@@ -20,7 +21,7 @@ int execute(char **list_cmds)
 	}
 	else if (pid == 0)
 	{
-		if (execve(list_cmds[0], list_cmds, NULL) == -1)
+		if (execve(arg[0], arg, NULL) == -1)
 		{
 			perror("Error exc");
 			exit(0);
