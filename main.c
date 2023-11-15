@@ -10,7 +10,7 @@
  */
 int main(int argc, char **argv, char **env)
 {
-int _status, i;
+	int _status;
 	char *cmds, **list_cmds;
 
 
