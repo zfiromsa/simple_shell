@@ -28,13 +28,13 @@ int main(int argc, char **argv, char **env)
 			continue;
 		}
 		list_cmds = Func_list_cmds(cmds, list_cmds);
+		free(cmds);
 		if (list_cmds == NULL || list_cmds[0] == NULL)
 		{
 			free(cmds);
 			break;
 		}
-		_status = execute(list_cmds, env);
-		free(cmds);
+		_status = execute(list_cmds, env);	
 		_free(list_cmds);
 	}
 	return (0);
