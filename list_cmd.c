@@ -13,10 +13,10 @@ char **Func_list_cmds(char *cmds, char **list_cmds)
 	int i;
 
 	i = 0;
-	list_cmds = (char **)malloc(sizeof(char *));
+	list_cmds = malloc(sizeof(char *));
 	if (list_cmds == NULL)
 	{
-		perror("Error ");
+		perror("Error malloc ");
 		return (NULL);
 	}
 	token = strtok(cmds, " ");
