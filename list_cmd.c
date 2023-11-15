@@ -12,7 +12,7 @@ char **Func_list_cmds(char *cmds, char **list_cmds)
 	int i;
 
 	i = 0;
-	list_cmds = malloc(sizeof(char *));
+	list_cmds = malloc(sizeof(char *) * 2);
 	if (list_cmds == NULL)
 	{
 		perror("Error malloc ");
@@ -40,9 +40,7 @@ char **Func_list_cmds(char *cmds, char **list_cmds)
 		}
 		token = strtok(NULL, " ");
 	}
-	printf("hhhh\n");
 	list_cmds[i] = NULL;
-	printf("kkkl\n");
 	return (list_cmds);
 }
 

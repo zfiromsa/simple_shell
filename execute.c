@@ -23,8 +23,8 @@ int execute(char **list_cmds)
 		if (execve(list_cmds[0], list_cmds, NULL) == -1)
 		{
 			perror("Error exc");
+			exit(0);
 		}
-		exit(0);
 	}
 	else
 	{
