@@ -36,6 +36,7 @@ int main(int argc, char **argv, char **env)
 		printf("%i:   %s\n", i, list_cmds[i]);
 		execute(list_cmds, env);
 	}
+	free(cmds);
 	_free(list_cmds);
 	return (0);
 }

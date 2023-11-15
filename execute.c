@@ -28,7 +28,7 @@ int execute(char **list_cmds, char **env)
 	}
 	else
 	{
-		wait(&status);	
+		wait(&status);
 	}
 	return (0);
 }
