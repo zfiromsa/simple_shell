@@ -34,10 +34,10 @@ int main(int argc, char **argv, char **env)
 		i++;
 		}
 		printf("%i:   %s\n", i, list_cmds[i]);
-		execute(list_cmds, env);
+		_status = execute(list_cmds, env);
+		free(list_cmds);
+		list_cmds = NULL;
 	}
-	free(cmds);
-	_free(list_cmds);
 	return (0);
 }
 

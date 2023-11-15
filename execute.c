@@ -28,7 +28,11 @@ int execute(char **list_cmds, char **env)
 	}
 	else
 	{
-		wait(&status);
+		/**
+		 * wait(&status);
+	*/
+		_free(list_cmds);
+		free(chmod);
 	}
 	return (0);
 }
