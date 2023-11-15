@@ -18,6 +18,10 @@ int execute(char **list_cmds)
 		perror("Error pid");
 		return (1);
 	}
+	if (strcmp(list_cmds[0], "exit"))
+	{
+		return (-1);
+	}
 	else if (pid == 0)
 	{
 		if (execve(list_cmds[0], list_cmds, NULL) == -1)
