@@ -18,11 +18,11 @@ int main(int argc, char **argv, char **env)
 	list_cmds = NULL;
 	(void)argv;
 	(void)argc;
-	while (_status)
+	while (_status != -1)
 	{
 		printf("($) ");
 		cmds = read_cmd(cmds);
-		list_cmds = Func_list_cmds(cmds, list_cmds);
+		_status = Func_list_cmds(cmds, list_cmds);
 		if (list_cmds == NULL)
 		{
 			break;

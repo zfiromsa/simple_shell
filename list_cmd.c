@@ -6,7 +6,7 @@
  * @list_cmds: a place of where we store splited token
  * Return: list_cmds or NULL
  */
-char **Func_list_cmds(char *cmds, char **list_cmds)
+int Func_list_cmds(char *cmds, char **list_cmds)
 {
 	char *token;
 	int i, len_cmd;
@@ -30,7 +30,7 @@ char **Func_list_cmds(char *cmds, char **list_cmds)
 		if (list_cmds[i] == NULL)
 		{
 			perror("Error strdup ");
-			return (list_cmds);
+			return (1);
 		}
 		i++;
 		if (i >= len_cmd)
@@ -40,12 +40,12 @@ char **Func_list_cmds(char *cmds, char **list_cmds)
 			if (list_cmds == NULL)
 			{
 				perror("Error realloc");
-				return (list_cmds);
+				return (1);
 			}
 		}
 		token = strtok(NULL, " ");
 	}
 	list_cmds[i] = NULL;
-	return (list_cmds);
+	return (0);
 }
 

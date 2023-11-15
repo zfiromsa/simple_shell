@@ -7,7 +7,7 @@
  * @env: enviroment parm
  * Return: 0 or 1
  */
-void execute(char **list_cmds, char **env)
+int execute(char **list_cmds, char **env)
 {
 	pid_t pid;
 	int status;
@@ -22,11 +22,13 @@ void execute(char **list_cmds, char **env)
 		if (execve(list_cmds[0], list_cmds, env) == -1)
 		{
 			perror("Error exc");
+			return (1);
 		}
 	}
 	else
 	{
 		wait(&status);	
 	}
+	return (0);
 }
 
