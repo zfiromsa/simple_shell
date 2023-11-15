@@ -29,15 +29,14 @@ char **Func_list_cmds(char *cmds, char **list_cmds)
 		list_cmds[i] = token;
 		token = strtok(NULL, " ");
 		i++;
-		list_cmds = (char **)realloc(list_cmds, ((i + 1) * sizeof(char *)));
+		list_cmds = realloc(list_cmds, ((i + 1) * sizeof(char *)));
 		if (list_cmds == NULL)
 		{
-			perror("Error ");
-			break;
+			perror("Error realloc");
+			return (list_cmds);
 		}
 	}
 	list_cmds[i] = NULL;
-	free(cmds);
 	return (list_cmds);
 }
 

@@ -10,22 +10,26 @@
  */
 int main(int argc, char **argv, char **env)
 {
+int _status, i;
 	char *cmds, **list_cmds;
 
+
+    _status = 1;
 	cmds = NULL;
 	list_cmds = NULL;
 	(void)argv;
 	(void)argc;
-	while (true)
+	while (_status)
 	{
 		printf("($) ");
 		cmds = read_cmd(cmds);
 		list_cmds = Func_list_cmds(cmds, list_cmds);
+		free(cmds);
 		if (list_cmds == NULL)
 		{
 			break;
 		}
-		execute(list_cmds, env);
+		_status = execute(list_cmds, env);
 		_free(list_cmds);
 	}
 	return (0);
