@@ -33,24 +33,10 @@ char **Func_list_cmds(char *cmds, char **list_cmds)
 		if (list_cmds == NULL)
 		{
 			perror("Error realloc");
-
-		i = 0;
-		while (list_cmds[i])
-		{
-			printf("2222 %s\t\n", list_cmds[i]);
-			i++;
-		}
-
 			return (list_cmds);
 		}
 	}
 	list_cmds[i] = NULL;
-		i = 0;
-		while (list_cmds[i])
-		{
-			printf("1111 %s\t\n", list_cmds[i]);
-			i++;
-		}
 	return (list_cmds);
 }
 
