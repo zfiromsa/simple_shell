@@ -44,7 +44,6 @@ char **Func_list_cmds(char *cmds, char **list_cmds)
 			i++;
 		}
 		i = 0;
-	free(cmds);
 		while (list_cmds[i])
 		{
 			printf("2222 %s\t\n", list_cmds[i]);
