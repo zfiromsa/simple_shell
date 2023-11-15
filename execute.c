@@ -3,8 +3,7 @@
 /**
  * execute - execute using given parm by creating new processer
  *
- * @list_cmds: the address of each cmd termineted by NULL
- * @env: enviroment parm
+ * @list_cmds: the address of each cmd termineted by NULL*
  * Return: 0 or 1
  */
 int execute(char **list_cmds)

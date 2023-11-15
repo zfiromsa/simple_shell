@@ -2,18 +2,15 @@
 
 /**
  * main - simpel shell
- *
- * @argc: parm
- * @argv: parm
- * @env: enviroment
+ * 
  * Return: 0
  */
-int main()
+int main(void)
 {
 	int _status;
 	char *cmds, **list_cmds;
 
-    _status = 1;
+	_status = 1;
 	cmds = NULL;
 	list_cmds = NULL;
 	while (_status != -1)
@@ -32,7 +29,7 @@ int main()
 			free(cmds);
 			break;
 		}
-		_status = execute(list_cmds);	
+		_status = execute(list_cmds);
 		_free(list_cmds);
 	}
 	return (0);
