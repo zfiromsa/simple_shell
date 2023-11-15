@@ -2,7 +2,7 @@
 
 /**
  * main - simpel shell
- * 
+ *
  * Return: 0
  */
 int main(void)
