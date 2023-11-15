@@ -28,6 +28,6 @@ int execute(char **list_cmds, char **env)
 	{
 		wait(&status);
 	}	
-	return (1);
+	return (0);
 }
 
