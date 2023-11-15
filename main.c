@@ -12,8 +12,8 @@ int main(int argc, char **argv, char **env)
 {
 	char *cmds, **list_cmds;
 
-	free(cmds);
-	_free(list_cmds);
+	cmds = NULL;
+	list_cmds = NULL;
 	(void)argv;
 	(void)argc;
 	while (true)
@@ -21,14 +21,11 @@ int main(int argc, char **argv, char **env)
 		printf("($) ");
 		cmds = read_cmd(cmds);
 		list_cmds = Func_list_cmds(cmds, list_cmds);
-		printf("pppppppppppp");
 		if (list_cmds == NULL)
 		{
 			break;
 		}
-		printf("kkkkkkkkkkkkkk");
 		execute(list_cmds, env);
-		printf("lllllllllllll");
 		_free(list_cmds);
 	}
 	return (0);
