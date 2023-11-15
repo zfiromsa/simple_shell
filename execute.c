@@ -28,6 +28,5 @@ void execute(char **list_cmds, char **env)
 	{
 		wait(&status);	
 	}
-	_free(list_cmds);
 }
 
