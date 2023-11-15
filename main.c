@@ -10,12 +10,10 @@
  */
 int main(int argc, char **argv, char **env)
 {
-	int _status, i;
+	int _status;
 	char *cmds, **list_cmds;
 
-
     _status = 1;
-	i = 0;
 	cmds = NULL;
 	list_cmds = NULL;
 	(void)argv;
@@ -25,11 +23,6 @@ int main(int argc, char **argv, char **env)
 		printf("($) ");
 		cmds = read_cmd(cmds);
 		list_cmds = Func_list_cmds(cmds, list_cmds);
-		while (list_cmds[i])
-		{
-			printf("333 %s\t\n", list_cmds[i]);
-			i++;
-		}
 		if (list_cmds == NULL)
 		{
 			break;
