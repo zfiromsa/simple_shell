@@ -32,7 +32,6 @@ int execute(char **list_cmds)
 	else
 	{
 		waitpid(pid, &status, WUNTRACED);
-		_free(list_cmds);
 	}
 	return (0);
 }
