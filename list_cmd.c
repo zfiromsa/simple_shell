@@ -25,7 +25,12 @@ char **Func_list_cmds(char *cmds, char **list_cmds)
 		{
 			break;
 		}
-		list_cmds[i] = token;
+		list_cmds[i] = strdup(token);
+		if (list_cmds[i] == NULL)
+		{
+			perror("Error strdup ");
+			return (NULL);
+		}
 		i++;
 		list_cmds = realloc(list_cmds, ((i + 1) * sizeof(char *)));
 		if (list_cmds == NULL)

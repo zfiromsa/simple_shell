@@ -23,9 +23,15 @@ int main(int argc, char **argv, char **env)
 	{
 		printf("($) ");
 		cmds = read_cmd(cmds);
-		list_cmds = Func_list_cmds(cmds, list_cmds);
-		if (list_cmds == NULL)
+		if (strlen(cmds) == 1)
 		{
+			free(cmds);
+			continue;
+		}
+		list_cmds = Func_list_cmds(cmds, list_cmds);
+		if (list_cmds == NULL || list_cmds[0] == NULL)
+		{
+			free(cmds);
 			break;
 		}
 		while (list_cmds[i])
@@ -36,8 +42,8 @@ int main(int argc, char **argv, char **env)
 		}
 		printf("%i:   %s\n", i, list_cmds[i]);
 		_status = execute(list_cmds, env);
-		free(list_cmds);
-		list_cmds = NULL;
+		_free(list_cmds);
+		free(cmds);
 	}
 	return (0);
 }
