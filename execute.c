@@ -18,7 +18,7 @@ int execute(char **list_cmds)
 		perror("Error pid");
 		return (1);
 	}
-	if (strcmp(list_cmds[0], "exit"))
+	if (!strcmp(list_cmds[0], "exit"))
 	{
 		return (-1);
 	}

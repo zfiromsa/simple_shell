@@ -20,7 +20,7 @@ int main()
 	{
 		printf("#cisfun$ ");
 		cmds = read_cmd(cmds);
-		if (!strlen(cmds) == 1)
+		if (strlen(cmds) == 1)
 		{
 			free(cmds);
 			continue;
