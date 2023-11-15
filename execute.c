@@ -20,9 +20,6 @@ int execute(char **list_cmds, char **env)
 	}
 	else if (pid == 0)
 	{
-		close(STDIN_FILENO);
-		close(STDOUT_FILENO);
-		close(STDERR_FILENO);
 		if (execve(list_cmds[0], list_cmds, env) == -1)
 		{
 			perror("Error exc");
