@@ -11,7 +11,7 @@ int execute(char **list_cmds)
 {
 	pid_t pid;
 	int status;
-	char *argv[] = {"/bin/ls", "-l", "/root/", NULL};
+	char *argv[] = {"/bin/ls ", "-l", " /root/", NULL};
 
 	pid = fork();
 	(void)list_cmds;
