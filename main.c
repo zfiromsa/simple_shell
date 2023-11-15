@@ -27,7 +27,7 @@ int main(int argc, char **argv, char **env)
 		list_cmds = Func_list_cmds(cmds, list_cmds);
 		while (list_cmds[i])
 		{
-			printf("1111 %s\t\n", list_cmds[i]);
+			printf("333 %s\t\n", list_cmds[i]);
 			i++;
 		}
 		if (list_cmds == NULL)
