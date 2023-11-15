@@ -42,7 +42,7 @@ char **Func_list_cmds(char *cmds, char **list_cmds)
 	}
 	printf("hhhh\n");
 	list_cmds[i] = NULL;
-	printf("kkkl\n")
+	printf("kkkl\n");
 	return (list_cmds);
 }
 
