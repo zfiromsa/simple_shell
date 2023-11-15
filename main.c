@@ -26,10 +26,8 @@ int main(int argc, char **argv, char **env)
 		list_cmds = Func_list_cmds(cmds, list_cmds);
 		if (list_cmds == NULL)
 		{
-			free(cmds);
 			break;
 		}
-		free(cmds);
 		while (list_cmds[i])
 		{
 		printf("%i:   %s\n", i, list_cmds[i]);
