@@ -34,6 +34,8 @@ int main(int argc, char **argv, char **env)
 			break;
 		}
 		_status = execute(list_cmds, env);
+		free(cmds);
+		_free(list_cmds);
 	}
 	return (0);
 }
