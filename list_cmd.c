@@ -18,7 +18,7 @@ char **Func_list_cmds(char *cmds, char **list_cmds)
 		perror("Error malloc ");
 		return (NULL);
 	}
-	token = strtok(cmds, " ");
+	token = strtok(cmds, " \n");
 	while (token != NULL)
 	{
 		if (token[0] == '#')
@@ -38,7 +38,7 @@ char **Func_list_cmds(char *cmds, char **list_cmds)
 			perror("Error realloc");
 			return (NULL);
 		}
-		token = strtok(NULL, " ");
+		token = strtok(NULL, " \n");
 	}
 	list_cmds[i] = NULL;
 	return (list_cmds);
