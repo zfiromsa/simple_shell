@@ -25,9 +25,12 @@ int main(int argc, char **argv, char **env)
 		list_cmds = Func_list_cmds(cmds, list_cmds);
 		if (list_cmds == NULL)
 		{
+			free(cmds);
 			break;
 		}
+		free(cmds);
 		execute(list_cmds, env);
+		_free(list_cmds);
 	}
 	return (0);
 }
