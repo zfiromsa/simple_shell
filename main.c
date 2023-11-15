@@ -18,7 +18,7 @@ int main()
 	list_cmds = NULL;
 	while (_status != -1)
 	{
-		printf("($) ");
+		printf("#cisfun$ ");
 		cmds = read_cmd(cmds);
 		if (strlen(cmds) == 1)
 		{
