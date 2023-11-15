@@ -31,7 +31,7 @@ char **Func_list_cmds(char *cmds, char **list_cmds)
 		if (list_cmds == NULL)
 		{
 			perror("Error realloc");
-			break;
+			return (NULL);
 		}
 		token = strtok(NULL, " ");
 	}
