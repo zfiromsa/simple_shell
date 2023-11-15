@@ -42,9 +42,9 @@ int main(int argc, char **argv, char **env)
 		}
 		printf("%i:   %s\n", i, list_cmds[i]);
 		_status = execute(list_cmds, env);
-		_free(list_cmds);
-		free(cmds);
 	}
+	_free(list_cmds);
+	free(cmds);
 	return (0);
 }
 
