@@ -9,11 +9,10 @@
 char **Func_list_cmds(char *cmds, char **list_cmds)
 {
 	char *token;
-	int i, len_cmd;
+	int i;
 
 	i = 0;
-	len_cmd = 15;
-	list_cmds = malloc(((len_cmd + 1) * sizeof(char *)));
+	list_cmds = malloc(sizeof(char *));
 	if (list_cmds == NULL)
 	{
 		perror("Error malloc ");
@@ -26,24 +25,15 @@ char **Func_list_cmds(char *cmds, char **list_cmds)
 		{
 			break;
 		}
-		list_cmds[i] = strdup(token);
-		if (list_cmds[i] == NULL)
+		list_cmds[i] = token;
+		token = strtok(NULL, " ");
+		i++;
+		list_cmds = realloc(list_cmds, ((i + 1) * sizeof(char *)));
+		if (list_cmds == NULL)
 		{
-			perror("Error strdup ");
+			perror("Error realloc");
 			return (list_cmds);
 		}
-		i++;
-		if (i >= len_cmd)
-		{
-			len_cmd *= 2;
-			list_cmds = realloc(list_cmds, ((len_cmd + 1) * sizeof(char *)));
-			if (list_cmds == NULL)
-			{
-				perror("Error realloc");
-				return (list_cmds);
-			}
-		}
-		token = strtok(NULL, " ");
 	}
 	list_cmds[i] = NULL;
 	return (list_cmds);
