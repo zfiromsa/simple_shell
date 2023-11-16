@@ -3,9 +3,12 @@
 /**
  * main - simpel shell
  *
+ * @argv: parm
+ * @argc: parm
+ * @env: parm
  * Return: 0
  */
-int main(void)
+int main(int argc,char **argv, char **env)
 {
 	int _status;
 	char *cmds, **list_cmds;
@@ -13,6 +16,8 @@ int main(void)
 	_status = 1;
 	cmds = NULL;
 	list_cmds = NULL;
+	(void)argv;
+	(void)argc;
 	while (_status != -1)
 	{
 		printf("$ ");

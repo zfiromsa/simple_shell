@@ -4,9 +4,10 @@
  * execute - execute using given parm by creating new processer
  *
  * @list_cmds: the address of each cmd termineted by NULL*
+ * @env: parm
  * Return: 0 or 1
  */
-int execute(char **list_cmds)
+int execute(char **list_cmds, char **env)
 {
 	pid_t pid;
 	int status;
@@ -23,7 +24,7 @@ int execute(char **list_cmds)
 	}
 	else if (pid == 0)
 	{
-		if (execve(list_cmds[0], list_cmds, NULL) == -1)
+		if (execve(list_cmds[0], list_cmds, env) == -1)
 		{
 			perror("Error exc");
 			exit(0);
