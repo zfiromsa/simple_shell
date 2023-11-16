@@ -9,10 +9,9 @@
 char *read_cmd(char *cmds)
 {
 	size_t len;
-	ssize_t rd;
 
 	len = 0;
-	rd = getline(&cmds, &len, stdin);
+	getline(&cmds, &len, stdin);
 	return (cmds);
 }
 
