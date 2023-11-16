@@ -8,19 +8,22 @@
  */
 char **Func_list_cmds(char *cmds, char **list_cmds)
 {
-	char *token;
+	char *token, *tmp;
 	int i;
 
 	i = 0;
 	if (strncmp(cmds, "/bin/", 5) != 0)
 	{
-		cmds = realloc(cmds, ((strlen(cmds) + 5) *sizeof(char)));
-		if (cmds == NULL)
+		tmp = malloc(cmds, ((strlen(cmds) + 6) * sizeof(char)));
+		if (tmp == NULL)
 		{
-			perror("Error realloc");
+			perror("Error malloc");
 			return (NULL);
 		}
-		strcat("/bin/", cmds);
+		strcpy(tmp, "/bin/");
+		strcat(tmp, cmds);
+		free(cmds);
+		cmds = tmp;
 	}
 	list_cmds = malloc(sizeof(char *) * 2);
 	if (list_cmds == NULL)
