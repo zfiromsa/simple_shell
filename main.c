@@ -3,12 +3,9 @@
 /**
  * main - simpel shell
  *
- * @argv: parm
- * @argc: parm
- * @env: parm
  * Return: 0
  */
-int main(int argc,char **argv, char **env)
+int main(void)
 {
 	int _status;
 	char *cmds, **list_cmds;
@@ -34,7 +31,7 @@ int main(int argc,char **argv, char **env)
 			free(cmds);
 			break;
 		}
-		_status = execute(list_cmds, env);
+		_status = execute(list_cmds);
 		_free(list_cmds);
 	}
 	return (0);

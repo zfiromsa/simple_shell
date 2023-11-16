@@ -10,9 +10,11 @@
 #include <sys/wait.h>
 #include <stdbool.h>
 
+extern char **environ;
+
 char *read_cmd(char *cmds);
 char **Func_list_cmds(char *cmds, char **list_cmds);
-int execute(char **list_cmds, char **env);
+int execute(char **list_cmds);
 void _free(char **listcmds);
 
 #endif
