@@ -13,11 +13,6 @@ char *read_cmd(char *cmds)
 
 	len = 0;
 	rd = getline(&cmds, &len, stdin);
-	if (rd < 0)
-	{
-		perror("Error read");
-		return (NULL);
-	}
 	return (cmds);
 }
 

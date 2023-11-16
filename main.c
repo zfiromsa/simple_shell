@@ -16,7 +16,8 @@ int main(void)
 	while (_status != -1)
 	{
 		printf("#cisfun$ ");
-		if ((cmds = read_cmd(cmds)) || cmds == NULL)
+		cmds = read_cmd(cmds)
+		if (strlen(cmds) <= 1 || cmds == NULL)
 		{
 			free(cmds);
 			continue;
