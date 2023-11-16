@@ -20,7 +20,7 @@ int main(int argc,char **argv, char **env)
 	(void)argc;
 	while (_status != -1)
 	{
-		printf("$ ");
+		printf("#cisfun$ ");
 		cmds = read_cmd(cmds);
 		if (strlen(cmds) == 1)
 		{
