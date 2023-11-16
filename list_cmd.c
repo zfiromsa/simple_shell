@@ -22,7 +22,6 @@ char **Func_list_cmds(char *cmds, char **list_cmds)
 		}
 		strcpy(tmp, "/bin/");
 		strcat(tmp, cmds);
-		free(cmds);
 		cmds = tmp;
 	}
 	list_cmds = malloc(sizeof(char *) * 2);
