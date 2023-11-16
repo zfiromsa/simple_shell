@@ -13,8 +13,6 @@ int main(void)
 	_status = 1;
 	cmds = NULL;
 	list_cmds = NULL;
-	(void)argv;
-	(void)argc;
 	while (_status != -1)
 	{
 		printf("#cisfun$ ");
