@@ -15,7 +15,7 @@ int execute(char **list_cmds, char **env)
 	pid = fork();
 	if (pid == -1)
 	{
-		perror("Error pid");
+		perror("Error ");
 		return (1);
 	}
 	if (!strcmp(list_cmds[0], "exit"))
@@ -26,8 +26,8 @@ int execute(char **list_cmds, char **env)
 	{
 		if (execve(list_cmds[0], list_cmds, env) == -1)
 		{
-			perror("Error exc");
-			exit(0);
+			perror("Error ");
+			return (1);
 		}
 	}
 	else
