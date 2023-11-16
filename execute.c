@@ -32,7 +32,7 @@ int execute(char **list_cmds)
 	}
 	else
 	{
-		wait(status);
+		wait(&status);
 	}
 	return (0);
 }
