@@ -16,7 +16,10 @@ int main(void)
 	while (_status != -1)
 	{
 		printf("($) ");
-		cmds = read_cmd(cmds);
+		if (cmds = read_cmd(cmds))
+		{
+			return (0);
+		}
 		if (strlen(cmds) == 1 || cmds == NULL)
 		{
 			free(cmds);
