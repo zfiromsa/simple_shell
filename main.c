@@ -17,10 +17,6 @@ int main(void)
 	{
 		printf("($) ");
 		cmds = read_cmd(cmds);
-		if (strncmp(cmds, "exit", 4) == 0)
-		{
-			return (0);
-		}
 		if (strlen(cmds) == 1 || cmds == NULL)
 		{
 			free(cmds);
