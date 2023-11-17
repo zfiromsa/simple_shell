@@ -9,6 +9,7 @@
 char *read_cmd(char *cmds)
 {
 	size_t len;
+	char *tmp;
 
 	len = 0;
 	getline(&cmds, &len, stdin);

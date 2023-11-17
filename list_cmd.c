@@ -8,7 +8,7 @@
  */
 char **Func_list_cmds(char *cmds, char **list_cmds)
 {
-	char *token, *tmp;
+	char *token;
 	int i;
 
 	i = 0;
