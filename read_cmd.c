@@ -13,19 +13,22 @@ char *read_cmd(char *cmds)
 
 	len = 0;
 	getline(&cmds, &len, stdin);
-	if (strcmp(cmds, "exit") && (!strlen(cmds) == 0))
+	if (strcmp(cmds, "exit"))
 	{
-		if (strncmp(cmds, "/bin/", 5) != 0)
+		if (strlen(cmds) != 0)
 		{
-			tmp = malloc((strlen(cmds) + 6) * sizeof(char));
-			if (tmp == NULL)
+			if (strncmp(cmds, "/bin/", 5) != 0)
 			{
-				perror("Error malloc");
-				return (NULL);
+				tmp = malloc((strlen(cmds) + 6) * sizeof(char));
+				if (tmp == NULL)
+				{
+					perror("Error malloc");
+					return (NULL);
+				}
+				strcpy(tmp, "/bin/");
+				strcat(tmp, cmds);
+				cmds = tmp;
 			}
-			strcpy(tmp, "/bin/");
-			strcat(tmp, cmds);
-			cmds = tmp;
 		}
 	}
 	return (cmds);
