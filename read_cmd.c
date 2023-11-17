@@ -13,7 +13,7 @@ char *read_cmd(char *cmds)
 
 	len = 0;
 	getline(&cmds, &len, stdin);
-	if (strcmp(cmds, "exit"))
+	if (!strncmp(cmds, "exit"), 4)
 	{
 		if (strlen(cmds) != 0)
 		{
