@@ -12,6 +12,10 @@ char **Func_list_cmds(char *cmds, char **list_cmds)
 	int i;
 
 	i = 0;
+	if (!strcmp(cmds, "exit"))
+	{
+		return (-1);
+	}
 	if (strncmp(cmds, "/bin/", 5) != 0)
 	{
 		tmp = malloc((strlen(cmds) + 6) * sizeof(char));
