@@ -13,7 +13,7 @@ char *read_cmd(char *cmds)
 
 	len = 0;
 	getline(&cmds, &len, stdin);
-	if (strcmp(cmds, "exit"))
+	if (strcmp(cmds, "exit") && cmds != NULL)
 	{
 		if (strncmp(cmds, "/bin/", 5) != 0)
 		{
