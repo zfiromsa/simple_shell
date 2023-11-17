@@ -12,6 +12,10 @@ int execute(char **list_cmds)
 	pid_t pid;
 	int status;
 
+	if (!strcmp(list_cmds[0], "exit"))
+	{
+		return (-1);
+	}
 	pid = fork();
 	if (pid == -1)
 	{
