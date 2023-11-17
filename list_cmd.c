@@ -12,21 +12,6 @@ char **Func_list_cmds(char *cmds, char **list_cmds)
 	int i;
 
 	i = 0;
-	if (strcmp(cmds, "exit"))
-	{
-		if (strncmp(cmds, "/bin/", 5) != 0)
-		{
-			tmp = malloc((strlen(cmds) + 6) * sizeof(char));
-			if (tmp == NULL)
-			{
-				perror("Error malloc");
-				return (NULL);
-			}
-			strcpy(tmp, "/bin/");
-			strcat(tmp, cmds);
-			cmds = tmp;
-		}
-	}
 	list_cmds = malloc(sizeof(char *) * 2);
 	if (list_cmds == NULL)
 	{
