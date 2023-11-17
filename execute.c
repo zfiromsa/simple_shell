@@ -22,7 +22,7 @@ int execute(char **list_cmds)
 		perror("Error ");
 		return (1);
 	}
-	else if (pid == 0)
+	else if (pid == 0 && (list_cmds[0]))
 	{
 		if (execve(list_cmds[0], list_cmds, environ) == -1)
 		{
