@@ -27,7 +27,7 @@ int execute(char **list_cmds)
 		if (execve(list_cmds[0], list_cmds, environ) == -1)
 		{
 			perror("Error ");
-			return (1);
+			exit(EXIT_FAILURE);
 		}
 	}
 	else
