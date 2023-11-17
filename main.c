@@ -16,7 +16,8 @@ int main(void)
 	while (_status != -1)
 	{
 		printf("($) ");
-		if ((cmds = read_cmd(cmds)) == NULL)
+		cmds = read_cmd(cmds);
+		if (!strcmp(cmds, "exit"))
 		{
 			return (0);
 		}
